@@ -17,6 +17,19 @@ const IndexPage = (props) => {
     event.preventDefault();
   }
 
+  function randomCustomers(min,max){
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
+  // prototype method inherits from constructor ShopData
+  function calcCookies(){
+    for (let i = 0; i < 9; i++){
+      this.cookiesPerHour.push (Math.ceil(randomCustomers(this.maxCust, this.minCust) * this.avgCookieSale));
+      this.totalCookies += this.cookiesPerHour[i];
+  
+    }
+  };
+  
+
   // const handleChange = (event) => {
   //   setCity({value: event.target.value});
   // }
@@ -69,21 +82,33 @@ const IndexPage = (props) => {
         <table>
           <thead>
             <tr>
-              <th>name</th>
-              <th>height</th>
-              <th>place</th>
+              <th>City</th>
+              <th>7am</th>
+              <th>8am</th>
+              <th>9am</th>
+              <th>10am</th>
+              <th>11am</th>
+              <th>12pm</th>
+              <th>1pm</th>
+              <th>2pm</th>
+              <th>3pm</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Monte Falco</td>
-              <td>1658</td>
-              <td>Parco Foreste Casentinesi</td>
+              <td>Seattle</td>
+              <td>58</td>
+              <td>24</td>
             </tr>
             <tr>
-              <td>Monte Falterona</td>
-              <td>1654</td>
-              <td>Parco Foreste Casentinesi</td>
+              <td>Detroit</td>
+              <td>54</td>
+              <td>64</td>
+            </tr>
+            <tr>
+              <td>Honolulu</td>
+              <td>78</td>
+              <td>24</td>
             </tr>
           </tbody>
         </table>
